@@ -1,14 +1,17 @@
-// Mostrar mensagem
-function showMessage(){
-  document.getElementById("message").style.display = "block";
+function showMessage() {
 
-  for(let i = 0; i < 20; i++){
+  const message = document.getElementById("message");
+
+  message.style.display = "block";
+
+  for(let i = 0; i < 25; i++) {
     createHeart();
   }
+
 }
 
-// Criar corações
-function createHeart(){
+function createHeart() {
+
   const heart = document.createElement("div");
 
   heart.classList.add("heart");
@@ -17,18 +20,18 @@ function createHeart(){
 
   heart.style.left = Math.random() * 100 + "vw";
 
-  heart.style.fontSize =
-  Math.random() * 30 + 20 + "px";
-
   heart.style.animationDuration =
-  Math.random() * 3 + 3 + "s";
+    Math.random() * 3 + 3 + "s";
+
+  heart.style.fontSize =
+    Math.random() * 20 + 15 + "px";
 
   document.body.appendChild(heart);
 
   setTimeout(() => {
     heart.remove();
   }, 6000);
+
 }
 
-// Corações infinitos
-setInterval(createHeart, 500);
+setInterval(createHeart, 700);
